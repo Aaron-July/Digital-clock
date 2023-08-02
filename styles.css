@@ -85,3 +85,27 @@
 #sec::after {
     content:'SEC';
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    .container {
+        height: 250px; /* Adjust height for better vertical spacing */
+    }
+
+    .clock {
+        font-size: 6vw; /* Adjust font size for better visibility on mobile */
+        display: flex;
+        flex-direction: column; /* Display the clock elements vertically */
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, rgba(235, 0, 255, 0.11), rgba(235, 0, 255, 0.5)); /* Vertical gradient */
+    }
+
+    .clock span {
+        width: 100%; /* Adjust width to fill the container width */
+    }
+
+    .clock span::after {
+        font-size: 12px; /* Adjust label font size for better visibility */
+    }
+}
