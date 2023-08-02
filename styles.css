@@ -89,23 +89,47 @@
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
     .container {
-        height: 250px; /* Adjust height for better vertical spacing */
+        height: 300px; /* Adjust height for better vertical spacing */
+        width: 90%; /* Change to a percentage value for responsiveness */
+        max-width: 600px; /* Reduce the max-width for better fit on small screens */
     }
 
     .clock {
-        font-size: 6vw; /* Adjust font size for better visibility on mobile */
-        display: flex;
+        font-size: 10vw; /* Adjust font size for better visibility on mobile */
         flex-direction: column; /* Display the clock elements vertically */
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(to bottom, rgba(235, 0, 255, 0.11), rgba(235, 0, 255, 0.5)); /* Vertical gradient */
     }
 
     .clock span {
-        width: 100%; /* Adjust width to fill the container width */
+        font-size: 12vw; /* Adjust font size for better visibility on mobile */
     }
 
-    .clock span::after {
-        font-size: 12px; /* Adjust label font size for better visibility */
+    .container::before, .container::after {
+        display: none; /* Hide the decorative circles on mobile */
+        width: 100px; /* Reduce the width for better positioning */
+        height: 100px; /* Reduce the height for better positioning */
+        left: 10px; /* Adjust the position for better fit on small screens */
+        top: 10px; /* Adjust the position for better fit on small screens */
     }
+
+    
+    .container::after {
+        content: '';
+        width: 100px; /* Reduce the width for better positioning */
+        height: 100px; /* Reduce the height for better positioning */
+        background: #419aff;
+        border-radius: 50%;
+        position: absolute;
+        right: 10px; /* Adjust the position for better fit on small screens */
+        bottom: 10px; /* Adjust the position for better fit on small screens */
+        z-index: -1;
+    }
+    
+    .clock span {
+        font-size: 80px;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        margin: 10px 0; /* Add margin for spacing between clock elements */
+    }
+    
 }
